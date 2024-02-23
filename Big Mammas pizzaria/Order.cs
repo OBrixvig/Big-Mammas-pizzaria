@@ -6,65 +6,74 @@ using System.Threading.Tasks;
 
 namespace Big_Mammas_pizzaria
 {
-    public class Order 
-
+    public class Order
     {
+        Menu _menu = new Menu();
+
         private int _orderId;
-        private int _idCounter;
-        private double _orderPrice; 
-        private string _orderItem;
+        private int _totalOrderPrice;
         private DateTime _date;
+        private string _orderItems;
 
+        // alt ++
+        private int _idCounter;
 
-        private Menu _nr1;
-        private Menu _nr2;
-        private Menu _nr3;
-
-        
-        public Order() 
+        public Order()
         {
-            ID = _orderId ;
-            Date = DateTime.Now ;
-            //_orderItem = orderItems;
-
-
-
-
-            _nr1 = new Menu("MAGARITA", "TOMATO CHEESE", 69);
-            _nr2 = new Menu("VESUVIO", "TOMATO CHEESE & HAM", 75);
-            _nr3 = new Menu("CAPRICCIOSA", "TOMATO CHEESE HAM & MUSHROOMS", 80);
+            ID = 1 + _idCounter;
+            Date = DateTime.Now;
+            _idCounter++;
+            _totalOrderPrice = 0;
         }
 
-
-        public void PizzaChoice( string n1, string nr2, string nr3) 
-        {
-           string _nr1 = n1;
-           string _nr2 = nr2;
-           string _nr3 = nr3;
+        public void  AddPizzaNr1()
+        { 
+            _totalOrderPrice += menu.nr1.PizzaPrice;
+            _orderItems += menu.nr1.Name;
         }
 
+        public void AddPizzaNr2()
+        {
+            _totalOrderPrice += menu.nr2.PizzaPrice;
+            _orderItems += menu.nr2.Name;
+        }
 
-        private int myVar;
+        public void AddPizzaNr3()
+        {
+            _totalOrderPrice += menu.nr3.PizzaPrice;
+            _orderItems += menu.nr3.Name;
+        }
 
+        //ToString Method
+        public override string ToString()
+        {
+            return "Your order: " + _orderItems + "Total Price " + _totalOrderPrice + Environment.NewLine + "ordre-id " + ID + Environment.NewLine+ "date " + Date.ToString("dd-MM-yyyy :  "+ Environment.NewLine + "kl: HH-mm-fff " + Environment.NewLine );
+        }
+
+        //Making Properties
         public int ID
         {
             get { return _orderId; }
             set { _orderId = value; }
         }
-
-
-        public DateTime Date       
+        public DateTime Date
         {
             get { return _date; }
             set { _date = value; }
         }
+        public int TotalPrice
+        { 
+            get { return _totalOrderPrice; } 
+            set { _totalOrderPrice = value; }
+        }
+        public string Items
+        {
+            get { return _orderItems; }
+        }
 
-
-
+        public Menu menu
+        {
+            get { return _menu; }
+        }
     }
-    
-
-
-
-    
 }
