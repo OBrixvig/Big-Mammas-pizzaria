@@ -13,9 +13,8 @@ namespace Big_Mammas_pizzaria
         private string _phone;
         private string _address;
 
-        CustomerClub _clubId = new CustomerClub();
         Order _order = new Order();
-
+        CustomerClub _clubId = new CustomerClub();
         public Customer(string name, string email, string phone, string adresse)
         {
             _name = name;
@@ -52,9 +51,9 @@ namespace Big_Mammas_pizzaria
         { 
             get { return _order; } 
         }
-       // public CustomerClub ClubID
-       // {
-       //     get { return _clubId; } 
-       // }
+        public CustomerClub CustomerClub
+        { 
+            get { return _clubId; } 
+        }
     }
 }

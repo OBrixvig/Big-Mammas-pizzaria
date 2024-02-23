@@ -10,17 +10,17 @@ namespace Big_Mammas_pizzaria
     {
         Menu _menu = new Menu();
 
-        private int _orderId;
+        private int _orderId ;
         private int _totalOrderPrice;
         private DateTime _date;
         private string _orderItems;
 
         // alt ++
-        private int _idCounter;
+        static int _idCounter;
 
         public Order()
         {
-            ID = 1 + _idCounter;
+            ID = _idCounter;
             Date = DateTime.Now;
             _idCounter++;
             _totalOrderPrice = 0;
@@ -41,7 +41,7 @@ namespace Big_Mammas_pizzaria
         public void AddPizzaNr3()
         {
             _totalOrderPrice += menu.nr3.PizzaPrice;
-            _orderItems += menu.nr3.Name;
+            _orderItems += menu.nr3.Name ;
         }
 
         //ToString Method

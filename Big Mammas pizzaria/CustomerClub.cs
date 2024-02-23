@@ -6,10 +6,14 @@ using System.Threading.Tasks;
 
 namespace Big_Mammas_pizzaria
 {
-    internal class CustomerClub
+    public class CustomerClub
     {
         public int _customerId;
         public int _idCounter;
+
+        Order _order = new Order();
+
+        
         public CustomerClub()
         {
             _customerId = _idCounter;
@@ -19,7 +23,7 @@ namespace Big_Mammas_pizzaria
         { 
             get { return _customerId; } 
         }
-
+        public Order order { get { return _order; } }
     }
 
 }

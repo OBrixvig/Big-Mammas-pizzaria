@@ -13,23 +13,28 @@ namespace Big_Mammas_pizzaria
         private string _pizzaTopping;
 
         //Addtopping
-        private string _xtraTopping;     
+        private string _xtraTopping;
 
         //Topping price
         private int _toppingPrice = 9;
 
+        
+
+
+
         //Pizza Creator
-        public PizzaCreator(string name,string topping, int price)
+        public PizzaCreator(string name, string topping, int price)
         {
             _name = name;
             _pizzaPrice = price;
             _pizzaTopping = topping;
+            _name += _xtraTopping;
         }
 
         // add topping
         public void AddTopping(string top)
         {
-             _xtraTopping = top;
+            _xtraTopping = top;
             _pizzaPrice += _toppingPrice;
         }
 
@@ -37,8 +42,8 @@ namespace Big_Mammas_pizzaria
         public override string ToString()
         {
             string massage = ($"{_name} with {_pizzaTopping}{_xtraTopping} Price {_pizzaPrice} ,-");
-                
-                return massage;
+
+            return massage;
         }
 
         // Making properties
@@ -62,5 +67,6 @@ namespace Big_Mammas_pizzaria
         {
             get { return _toppingPrice; }
         }
+        
     }
 }
