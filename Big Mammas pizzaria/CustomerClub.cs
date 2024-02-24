@@ -11,9 +11,10 @@ namespace Big_Mammas_pizzaria
         public int _customerId;
         public int _idCounter;
 
+        //Making so a Cuttomer in customerclub can order
         Order _order = new Order();
 
-        
+        //Setting the properties
         public CustomerClub()
         {
             _customerId = _idCounter;

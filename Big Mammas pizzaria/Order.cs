@@ -9,9 +9,10 @@ namespace Big_Mammas_pizzaria
     public class Order
     {
         Menu _menu = new Menu();
+        CommentMaker _commentMaker = new CommentMaker();
 
         private int _orderId ;
-        private int _totalOrderPrice;
+        private double _totalOrderPrice;
         private DateTime _date;
         private string _orderItems;
 
@@ -25,7 +26,7 @@ namespace Big_Mammas_pizzaria
             _idCounter++;
             _totalOrderPrice = 0;
         }
-
+        //Add pizza methode
         public void  AddPizzaNr1()
         { 
             _totalOrderPrice += menu.nr1.PizzaPrice;
@@ -41,13 +42,21 @@ namespace Big_Mammas_pizzaria
         public void AddPizzaNr3()
         {
             _totalOrderPrice += menu.nr3.PizzaPrice;
-            _orderItems += menu.nr3.Name ;
+            _orderItems += menu.nr3.Name;
+        }
+        // Discount methode, only works if customer order with customerclub
+        public double ClubDiscount()
+        {
+                if (_totalOrderPrice >= 200);
+            {
+                return _totalOrderPrice *= 0.80 ;
+            }
         }
 
         //ToString Method
         public override string ToString()
         {
-            return "Your order: " + _orderItems + "Total Price " + _totalOrderPrice + Environment.NewLine + "ordre-id " + ID + Environment.NewLine+ "date " + Date.ToString("dd-MM-yyyy :  "+ Environment.NewLine + "kl: HH-mm-fff " + Environment.NewLine );
+            return  "Your order: " + _orderItems + Environment.NewLine + "Comments: " + _commentMaker.PizzaComment + Environment.NewLine + "Total Price: " + _totalOrderPrice + ",-" + Environment.NewLine + "ordre-id " + ID + Environment.NewLine + "date " + Date.ToString("dd-MM-yyyy :  "+ Environment.NewLine + "kl: HH-mm-fff " + Environment.NewLine );
         }
 
         //Making Properties
@@ -61,7 +70,7 @@ namespace Big_Mammas_pizzaria
             get { return _date; }
             set { _date = value; }
         }
-        public int TotalPrice
+        public double TotalPrice
         { 
             get { return _totalOrderPrice; } 
             set { _totalOrderPrice = value; }
@@ -74,6 +83,10 @@ namespace Big_Mammas_pizzaria
         public Menu menu
         {
             get { return _menu; }
+        }
+        public CommentMaker Comment
+        { 
+            get { return _commentMaker; } 
         }
     }
 }

@@ -18,10 +18,6 @@ namespace Big_Mammas_pizzaria
         //Topping price
         private int _toppingPrice = 9;
 
-        
-
-
-
         //Pizza Creator
         public PizzaCreator(string name, string topping, int price)
         {
@@ -42,7 +38,6 @@ namespace Big_Mammas_pizzaria
         public override string ToString()
         {
             string massage = ($"{_name} with {_pizzaTopping}{_xtraTopping} Price {_pizzaPrice} ,-");
-
             return massage;
         }
 

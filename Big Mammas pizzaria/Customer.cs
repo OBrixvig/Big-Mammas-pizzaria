@@ -26,7 +26,7 @@ namespace Big_Mammas_pizzaria
         //ToString Methode
         public override string ToString()
         {
-            string INFO = ($"Name:{_name}{Environment.NewLine}Email: {_email}{Environment.NewLine}Phone : {_phone}{Environment.NewLine}Adress: {_address}");
+            string INFO = ($"Name:{_name}{Environment.NewLine}Email: {_email}{Environment.NewLine}Phone : {_phone}{Environment.NewLine}Adress: {_address}{Environment.NewLine}{_order}");
             return INFO;
         }
 
