@@ -18,11 +18,11 @@ namespace Big_Mammas_pizzaria
         public CustomerClub()
         {
             _customerId = _idCounter;
-            _idCounter ++;
+            _idCounter++;
         }
         public int clubId
-        { 
-            get { return _customerId; } 
+        {
+            get { return _customerId; }
         }
         public Order order { get { return _order; } }
     }

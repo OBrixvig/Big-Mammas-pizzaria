@@ -47,13 +47,13 @@ namespace Big_Mammas_pizzaria
         {
             get { return _address; }
         }
-        public Order order
-        { 
-            get { return _order; } 
+        public Order Order
+        {
+            get { return _order; }
         }
         public CustomerClub CustomerClub
-        { 
-            get { return _clubId; } 
+        {
+            get { return _clubId; }
         }
     }
 }

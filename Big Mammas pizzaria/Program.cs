@@ -8,34 +8,34 @@ namespace Big_Mammas_pizzaria
     {
         static void Main(string[] args)
         {
-       Customer customer1 = new Customer("Jans Henrik", "gangsterperson@gangstermail.com", "20202020", "Farligvej 26.");
-       Customer customer2 = new Customer("Poul Magnussen", "Musik123@hotmail.com", "12123344", "Nodegade 31. 7. tv.");
-       Customer customer3 = new Customer("Oliver Brixvig", "Oliverbrixvig@gmail.com", "2", "Ejboparken 31. 2. th.");
+            Customer customer1 = new Customer("Jans Henrik", "gangsterperson@gangstermail.com", "20202020", "Farligvej 26.");
+            Customer customer2 = new Customer("Poul Magnussen", "Musik123@hotmail.com", "12123344", "Nodegade 31. 7. tv.");
+            Customer customer3 = new Customer("sad man", "Tromme12@gmail.com", "20201111", "sløjseparken 31. 2. th.");
 
 
-            Console.WriteLine(customer1.order.menu); 
-            customer1.order.menu.nr1.AddTopping("Extra Ost");
+            Console.WriteLine(customer1.Order.menu);
+            customer1.Order.menu.nr1.AddTopping("Extra Ost");
 
-            Console.WriteLine(customer1.order.menu.nr1);
-            
-            customer1.order.AddPizzaNr1();
-            customer1.order.AddPizzaNr2();
-            customer1.order.AddPizzaNr3();
+            Console.WriteLine(customer1.Order.menu.nr1);
 
-            customer1.order.Comment.AddPizzaComment("Can i plz get my pizza with Xtra thick crust");
+            customer1.Order.AddPizzaNr1();
+            customer1.Order.AddPizzaNr2();
+            customer1.Order.AddPizzaNr3();
+
+            customer1.Order.Comment.AddPizzaComment("Can i plz get my pizza with Xtra thick crust");
 
             Console.WriteLine(customer1);
 
-            Console.ReadKey();
+            Console.ReadKey(false);
             Console.Clear();
 
-            customer2.order.AddPizzaNr1();
-            customer2.order.AddPizzaNr2();
-            customer2.order.AddPizzaNr3();
+            customer2.Order.AddPizzaNr1();
+            customer2.Order.AddPizzaNr2();
+            customer2.Order.AddPizzaNr3();
 
-            Console.WriteLine(customer2.order);
+            Console.WriteLine(customer2.Order);
 
-            Console.ReadKey();
+            Console.ReadKey(false);
             Console.Clear();
 
             customer3.CustomerClub.order.AddPizzaNr3();
@@ -48,12 +48,8 @@ namespace Big_Mammas_pizzaria
 
             Console.WriteLine(customer3.CustomerClub.order);
 
-            Console.ReadKey();
+            Console.ReadKey(false);
             Console.Clear();
-
         }
-            
-
-        
     }
 }

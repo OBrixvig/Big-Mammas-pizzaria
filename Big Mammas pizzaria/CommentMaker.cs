@@ -17,7 +17,6 @@ namespace Big_Mammas_pizzaria
         public string PizzaComment
         {
             get { return _comment; }
-
         }
         public override string ToString()
         {
