@@ -49,7 +49,7 @@ namespace Big_Mammas_pizzaria
             Console.WriteLine(customer3.CustomerClub.order);
 
             Console.ReadKey(false);
-            Console.Clear();
+           
         }
     }
 }
