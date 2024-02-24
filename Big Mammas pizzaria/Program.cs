@@ -38,15 +38,15 @@ namespace Big_Mammas_pizzaria
             Console.ReadKey(false);
             Console.Clear();
 
-            customer3.CustomerClub.order.AddPizzaNr3();
-            customer3.CustomerClub.order.AddPizzaNr2();
-            customer3.CustomerClub.order.AddPizzaNr3();
-            customer3.CustomerClub.order.AddPizzaNr3();
-            Console.WriteLine(customer3.CustomerClub.order);
+            customer3.CustomerClub.Order.AddPizzaNr3();
+            customer3.CustomerClub.Order.AddPizzaNr2();
+            customer3.CustomerClub.Order.AddPizzaNr3();
+            customer3.CustomerClub.Order.AddPizzaNr3();
+            Console.WriteLine(customer3.CustomerClub.Order);
 
-            customer3.CustomerClub.order.ClubDiscount();
+            customer3.CustomerClub.ClubDiscount();
 
-            Console.WriteLine(customer3.CustomerClub.order);
+            Console.WriteLine(customer3.CustomerClub.Order);
 
             Console.ReadKey(false);
            

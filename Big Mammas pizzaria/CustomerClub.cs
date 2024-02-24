@@ -20,11 +20,19 @@ namespace Big_Mammas_pizzaria
             _customerId = _idCounter;
             _idCounter++;
         }
+        // Discount methode, only works if customer order with customerclub
+        public double ClubDiscount()
+        {
+            if (Order.TotalPrice >= 200) ;
+            {
+                return Order.TotalPrice *= 0.80;
+            }
+        }
         public int clubId
         {
             get { return _customerId; }
         }
-        public Order order { get { return _order; } }
+        public Order Order { get { return _order; } }
     }
 
 }

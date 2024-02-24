@@ -44,14 +44,6 @@ namespace Big_Mammas_pizzaria
             _totalOrderPrice += menu.nr3.PizzaPrice;
             _orderItems += menu.nr3.Name;
         }
-        // Discount methode, only works if customer order with customerclub
-        public double ClubDiscount()
-        {
-                if (_totalOrderPrice >= 200);
-            {
-                return _totalOrderPrice *= 0.80 ;
-            }
-        }
 
         //ToString Method
         public override string ToString()
