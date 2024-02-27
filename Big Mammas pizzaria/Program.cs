@@ -12,9 +12,13 @@ namespace Big_Mammas_pizzaria
             Customer customer2 = new Customer("Poul Magnussen", "Musik123@hotmail.com", "12123344", "Nodegade 31. 7. tv.");
             Customer customer3 = new Customer("sad man", "Tromme12@gmail.com", "20201111", "sløjseparken 31. 2. th.");
 
+           
 
             Console.WriteLine(customer1.Order.menu);
             customer1.Order.menu.nr1.AddTopping("Extra Ost");
+
+            Console.ReadKey(false);
+            Console.Clear();
 
             Console.WriteLine(customer1.Order.menu.nr1);
 
@@ -25,6 +29,7 @@ namespace Big_Mammas_pizzaria
             customer1.Order.Comment.AddPizzaComment("Can i plz get my pizza with Xtra thick crust");
 
             Console.WriteLine(customer1);
+            
 
             Console.ReadKey(false);
             Console.Clear();
@@ -33,7 +38,7 @@ namespace Big_Mammas_pizzaria
             customer2.Order.AddPizzaNr2();
             customer2.Order.AddPizzaNr3();
 
-            Console.WriteLine(customer2.Order);
+            Console.WriteLine(customer2);
 
             Console.ReadKey(false);
             Console.Clear();
@@ -46,7 +51,7 @@ namespace Big_Mammas_pizzaria
 
             customer3.CustomerClub.ClubDiscount();
 
-            Console.WriteLine(customer3.CustomerClub.Order);
+            Console.WriteLine(customer3);
 
             Console.ReadKey(false);
            

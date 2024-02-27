@@ -27,7 +27,7 @@ namespace Big_Mammas_pizzaria
             _totalOrderPrice = 0;
         }
         //Add pizza methode
-        public void  AddPizzaNr1()
+        public void AddPizzaNr1()
         { 
             _totalOrderPrice += menu.nr1.PizzaPrice;
             _orderItems += menu.nr1.Name;

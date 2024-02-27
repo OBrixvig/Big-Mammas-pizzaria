@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,13 +22,18 @@ namespace Big_Mammas_pizzaria
             _email = email;
             _phone = phone;
             _address = adresse;
-
         }
         //ToString Methode
         public override string ToString()
         {
-            string INFO = ($"Name:{_name}{Environment.NewLine}Email: {_email}{Environment.NewLine}Phone : {_phone}{Environment.NewLine}Adress: {_address}{Environment.NewLine}{_order}");
-            return INFO;
+            string clubInfo = ($"Name:{_name}{Environment.NewLine}Email: {_email}{Environment.NewLine}Phone : {_phone}{Environment.NewLine}Adress: {_address}{Environment.NewLine}{CustomerClub.Order}");
+            string customerInfo = ($"Name:{_name}{Environment.NewLine}Email: {_email}{Environment.NewLine}Phone : {_phone}{Environment.NewLine}Adress: {_address}{Environment.NewLine}{_order}");
+            if (_clubId)
+            {
+                return customerInfo = ToString();
+            }
+            else
+                return clubInfo = ToString();
         }
 
         // Making properties
