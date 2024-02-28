@@ -13,27 +13,29 @@ namespace Big_Mammas_pizzaria
         private string _email;
         private string _phone;
         private string _address;
+        private bool _clubmember;
 
-        Order _order = new Order();
-        CustomerClub _clubId = new CustomerClub();
-        public Customer(string name, string email, string phone, string adresse)
+        Order _order;
+        public Customer(string name, string email, string phone, string adresse, bool customerClub)
         {
             _name = name;
             _email = email;
             _phone = phone;
             _address = adresse;
+            _clubmember = customerClub;
         }
         //ToString Methode
         public override string ToString()
         {
-            string clubInfo = ($"Name:{_name}{Environment.NewLine}Email: {_email}{Environment.NewLine}Phone : {_phone}{Environment.NewLine}Adress: {_address}{Environment.NewLine}{CustomerClub.Order}");
             string customerInfo = ($"Name:{_name}{Environment.NewLine}Email: {_email}{Environment.NewLine}Phone : {_phone}{Environment.NewLine}Adress: {_address}{Environment.NewLine}{_order}");
-            if (_clubId)
-            {
-                return customerInfo = ToString();
-            }
-            else
-                return clubInfo = ToString();
+
+            return customerInfo;
+        }
+
+        public void CreateOrder()
+        {
+            _order = new Order(_clubmember);
+
         }
 
         // Making properties
@@ -57,9 +59,9 @@ namespace Big_Mammas_pizzaria
         {
             get { return _order; }
         }
-        public CustomerClub CustomerClub
+        public bool CustomerClub
         {
-            get { return _clubId; }
+            get { return _clubmember; }
         }
     }
 }

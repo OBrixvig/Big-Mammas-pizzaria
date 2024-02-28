@@ -11,44 +11,44 @@ namespace Big_Mammas_pizzaria
         Menu _menu = new Menu();
         CommentMaker _commentMaker = new CommentMaker();
 
-        private int _orderId ;
+        private int _orderId = 0;
         private double _totalOrderPrice;
         private DateTime _date;
-        private string _orderItems;
-
-        // alt ++
         static int _idCounter;
 
-        public Order()
+        private bool _discount = false;
+
+        private List<PizzaCreator> _pizzaList = new List<PizzaCreator>();
+        // alt ++
+
+
+        public Order(bool club)
         {
-            ID = _idCounter;
+            _orderId += ++_idCounter;
             Date = DateTime.Now;
-            _idCounter++;
             _totalOrderPrice = 0;
+            _discount = club;
         }
+
         //Add pizza methode
-        public void AddPizzaNr1()
-        { 
-            _totalOrderPrice += menu.nr1.PizzaPrice;
-            _orderItems += menu.nr1.Name;
-        }
-
-        public void AddPizzaNr2()
+        public void AddPizzaToList(PizzaCreator pizza)
         {
-            _totalOrderPrice += menu.nr2.PizzaPrice;
-            _orderItems += menu.nr2.Name;
-        }
-
-        public void AddPizzaNr3()
-        {
-            _totalOrderPrice += menu.nr3.PizzaPrice;
-            _orderItems += menu.nr3.Name;
+            _pizzaList.Add(pizza);
+            _totalOrderPrice += pizza.PizzaPrice;
         }
 
         //ToString Method
         public override string ToString()
         {
-            return  "Your order: " + _orderItems + Environment.NewLine + "Comments: " + _commentMaker.PizzaComment + Environment.NewLine + "Total Price: " + _totalOrderPrice + ",-" + Environment.NewLine + "ordre-id " + ID + Environment.NewLine + "date " + Date.ToString("dd-MM-yyyy :  "+ Environment.NewLine + "kl: HH-mm-fff " + Environment.NewLine );
+            StringBuilder sB = new StringBuilder();
+            sB.AppendLine("\n" + "Your order: ");
+            foreach (PizzaCreator pizza in PizzaList)
+            {
+                sB.AppendLine(pizza.ToString());
+            }
+            sB.AppendLine("Comments: " + _commentMaker.PizzaComment + "\n" + "\n" + "Total Price: " + _totalOrderPrice + ",-" + "\n" + "ordre-id " + _orderId + "\n");
+            sB.AppendLine("date " + Date.ToString("dd-MM-yyyy :  " + "\n" + "kl: HH:mm " + "\n"));
+            return sB.ToString();
         }
 
         //Making Properties
@@ -63,13 +63,8 @@ namespace Big_Mammas_pizzaria
             set { _date = value; }
         }
         public double TotalPrice
-        { 
-            get { return _totalOrderPrice; } 
-            set { _totalOrderPrice = value; }
-        }
-        public string Items
         {
-            get { return _orderItems; }
+            get { return _discount ? _totalOrderPrice * 0.8 : _totalOrderPrice; }
         }
 
         public Menu menu
@@ -77,8 +72,19 @@ namespace Big_Mammas_pizzaria
             get { return _menu; }
         }
         public CommentMaker Comment
-        { 
-            get { return _commentMaker; } 
+        {
+            get { return _commentMaker; }
         }
-    }
+        public List<PizzaCreator> PizzaList
+        {
+            get { return _pizzaList; }
+        }
+
+
+    } // public double ClubDiscount()
+      // {
+      //     if (Order.TotalPrice >= 200) ;
+      //     {
+      //         return Order.TotalPrice *= 0.80;
+      //     }
 }
