@@ -51,7 +51,7 @@ namespace Big_Mammas_pizzaria
 
             customer3.CustomerClub.ClubDiscount();
 
-            Console.WriteLine(customer3);
+            Console.WriteLine(customer3.CustomerClub.Order);
 
             Console.ReadKey(false);
            
