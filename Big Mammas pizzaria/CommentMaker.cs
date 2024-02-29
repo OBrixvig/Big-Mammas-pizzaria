@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Big_Mammas_pizzaria
 {
-    public class CommentMaker
+    public class CommentMaker // thinking about destoying this class and make the same method in Order Class.
     {
         private string _comment;
 

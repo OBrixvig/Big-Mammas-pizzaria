@@ -15,7 +15,9 @@ namespace Big_Mammas_pizzaria
         private string _address;
         private bool _clubmember;
 
+        //Making an Order :_order; so that i can make a method the creates order.
         Order _order;
+
         public Customer(string name, string email, string phone, string adresse, bool customerClub)
         {
             _name = name;
@@ -27,15 +29,15 @@ namespace Big_Mammas_pizzaria
         //ToString Methode
         public override string ToString()
         {
-            string customerInfo = ($"Name:{_name}{Environment.NewLine}Email: {_email}{Environment.NewLine}Phone : {_phone}{Environment.NewLine}Adress: {_address}{Environment.NewLine}{_order}");
+            string customerInfo = ($"Name:{_name} \n Email: {_email} \n Phone : {_phone} \n Adress: {_address} \n {_order}");
 
             return customerInfo;
         }
 
+        //making my CreateOrder Method
         public void CreateOrder()
         {
             _order = new Order(_clubmember);
-
         }
 
         // Making properties
