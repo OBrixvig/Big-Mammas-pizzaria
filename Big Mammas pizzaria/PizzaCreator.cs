@@ -27,7 +27,7 @@ namespace Big_Mammas_pizzaria
             _name += _xtraTopping;
         }
 
-        // add topping
+        // add topping virker ikke
         public void AddTopping(string top)
         {
             _xtraTopping = top;
