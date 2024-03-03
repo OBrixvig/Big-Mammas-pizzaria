@@ -14,6 +14,7 @@ namespace Big_Mammas_pizzaria
         private double _totalOrderPrice;
         private DateTime _date;
         static int _idCounter;
+        private double _delevery = 40;
 
         private string _comment;
 
@@ -21,7 +22,7 @@ namespace Big_Mammas_pizzaria
         private bool _discount = false;
 
         //Making my _pizzaList where i want to store all my pizzas
-        private List<PizzaCreator> _pizzaList = new List<PizzaCreator>();        
+        private List<PizzaCreator> _pizzaList = new List<PizzaCreator>();
 
         public Order(bool club)
         {
@@ -29,6 +30,7 @@ namespace Big_Mammas_pizzaria
             Date = DateTime.Now;
             _totalOrderPrice = 0;
             _discount = club;
+            _totalOrderPrice += _delevery;
         }
 
         //Add pizza method
@@ -37,7 +39,7 @@ namespace Big_Mammas_pizzaria
             _pizzaList.Add(pizza);
             _totalOrderPrice += pizza.PizzaPrice;
         }
-         //AddComment Method
+        //AddComment Method
         public void AddComment(string WhatYouWantTOSay)
         {
             _comment = WhatYouWantTOSay;
@@ -50,12 +52,12 @@ namespace Big_Mammas_pizzaria
             sB.AppendLine("\n" + "Your order: ");
 
             //Making a foreach so i can spit out the pizzas in my list. just as they are in the ToString in my PizzaCreator Class.
-            foreach (PizzaCreator pizza in PizzaList) 
+            foreach (PizzaCreator pizza in PizzaList)
             {
                 sB.AppendLine(pizza.ToString());
             }
-            sB.AppendLine("Comments: " + _comment + "\n" + "\n" + "Total Price: ");
-            sB.AppendLine(+TotalPrice + ",-" + "\n" + "ordre-id " + _orderId + "\n");
+            sB.AppendLine("Comments: " + _comment + "\n" + "\n" + "Delevery: " + _delevery + ",-");
+            sB.AppendLine("Total Price: " + TotalPrice + ",- incl. taxes." + "\n" + "ordre-id " + _orderId + "\n");
             sB.AppendLine("date " + Date.ToString("dd-MM-yyyy :  " + "\n" + "kl: HH:mm " + "\n"));
             //returner all the strings i have put in my sB
             return sB.ToString();
@@ -75,7 +77,7 @@ namespace Big_Mammas_pizzaria
         // in this property i have put _discount boolean in so if true you get totalprice with 20% discount
         public double TotalPrice
         {
-            get { return _discount ? _totalOrderPrice *.8 : _totalOrderPrice; }
+            get { return _discount ? ((_totalOrderPrice * .8) * 1.25) : _totalOrderPrice * 1.25; }
         }
         public string PizzaComment
         {
@@ -91,5 +93,5 @@ namespace Big_Mammas_pizzaria
         {
             get { return _pizzaList; }
         }
-    } 
+    }
 }

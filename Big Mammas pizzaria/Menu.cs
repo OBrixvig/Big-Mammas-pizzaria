@@ -14,7 +14,7 @@ namespace Big_Mammas_pizzaria
         PizzaCreator _nr3 = new PizzaCreator("CAPRICCIOSA ", "TOMATO CHEESE HAM & MUSHROOMS ", 80);
         public override string ToString()
         {
-            return "Big mammas MENU " + "\n" + "\n" + _nr1 + "\n" + _nr2 + "\n" + _nr3 + "\n" + "You can make your own pizza just ask.";
+            return "Big mammas MENU " + "\n" + "Delevery is 40,-" + "\n" + "\n" + _nr1 + "\n" + _nr2 + "\n" + _nr3 + "\n" + "You can make your own pizza just ask.";
         }
         //Making properties
         public PizzaCreator nr1 { get { return _nr1; } }
