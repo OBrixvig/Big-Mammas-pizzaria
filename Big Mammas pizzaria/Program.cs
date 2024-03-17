@@ -25,21 +25,24 @@ namespace Big_Mammas_pizzaria
 
             BigMama.ReciveAllCustomerFromList();
 
-            BigMama.UpdateCustomerName(customer1,"Jansen Heincik");// fungere ikke
+            BigMama.UpdateCustomerName(customer1,"Jansen Heincik");
 
             Console.WriteLine(customer1);
             //menuen pizza osv.
             Console.WriteLine(menu);
 
+            Console.WriteLine(menu.MenuList[0]);
+            Console.WriteLine(menu.MenuList[1]);
+
             // customer1 order begins
-       
+
             Console.ReadKey(false);
             Console.Clear();
             customer1.CreateOrder();
-            customer1.Order.AddPizzaToList(menu.MenuList[0]); // fejl?
-            customer1.Order.AddPizzaToList(customer1.Order.PizzaList[1]);
-            customer1.Order.AddPizzaToList(customer1.Order.PizzaList[2]);
-            customer1.Order.PizzaList[2].AddTopping("extra Pepper");
+            customer1.Order.AddPizzaToList(menu.MenuList[0]);
+            customer1.Order.AddPizzaToList(menu.MenuList[1]);
+           // customer1.Order.AddPizzaToList(customer1.Order.PizzaList[2]);
+            customer1.Order.PizzaList[0].AddTopping("extra Pepper");
             customer1.Order.PizzaList[1].AddTopping("extra ost");
             customer1.Order.AddComment("Can i plz get my pizza with Xtra thick crust");
 

@@ -37,13 +37,14 @@ namespace Big_Mammas_pizzaria
         //making my CreateOrder Method
         public void CreateOrder()
         {
-            Order _order = new Order(_clubmember) ;
+            _order = new Order(_clubmember) ;
         }
         
         // Making properties
         public string Name
         {
             get { return _name; }
+            set { _name = value; }
         }
         public string Email
         {

@@ -11,6 +11,10 @@ namespace Big_Mammas_pizzaria
 {
     public class MenuCatalog
     {
+        public MenuCatalog()
+        {
+                
+        }
         public List<Pizza> MenuList = new List<Pizza>()
         {
         //Pizzas in Menu

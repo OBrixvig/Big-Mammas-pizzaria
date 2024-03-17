@@ -24,7 +24,7 @@ namespace Big_Mammas_pizzaria
         public void UpdateCustomerName(Customer customer, string name)
         {
             
-            name = customer.Name;
+            customer.Name = name ;
         }
         public void AddCustomerToList(Customer customer)
         {
