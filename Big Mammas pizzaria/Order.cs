@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Big_Mammas_pizzaria
 {
-    public class Order
+    public class Order 
     {
-        Menu _menu = new Menu();
+        MenuCatalog catalog;
 
         private int _orderId = 0;
         private double _totalOrderPrice;
@@ -22,20 +22,20 @@ namespace Big_Mammas_pizzaria
         private bool _discount = false;
 
         //Making my _pizzaList where i want to store all my pizzas
-        private List<PizzaCreator> _pizzaList = new List<PizzaCreator>();
+        private List<Pizza> _pizzaList = new List<Pizza>();
 
-        public Order(bool club)
+        public Order(bool customerClub)
         {
             _orderId += ++_idCounter;
             Date = DateTime.Now;
             _totalOrderPrice = 0;
-            _discount = club;
             _totalOrderPrice += _delivery;
+            _discount = customerClub;
         }
 
 
         //Add pizza method
-        public void AddPizzaToList(PizzaCreator pizza)
+        public void AddPizzaToList(Pizza pizza)
         {
             _pizzaList.Add(pizza);
         }
@@ -52,7 +52,7 @@ namespace Big_Mammas_pizzaria
             sB.AppendLine("\n" + "Your order: ");
 
             //Making a foreach so i can spit out the pizzas in my list. just as they are in the ToString in my PizzaCreator Class.
-            foreach (PizzaCreator pizza in PizzaList)
+            foreach (Pizza pizza in PizzaList)
             {
                 sB.AppendLine(pizza.ToString());
             }
@@ -83,7 +83,7 @@ namespace Big_Mammas_pizzaria
                 if (!_ifChekedOut)
                 {
                     _ifChekedOut = !_ifChekedOut;
-                    foreach (PizzaCreator p in PizzaList)
+                    foreach (Pizza p in PizzaList)
                     {
                         _totalOrderPrice += p.PizzaPrice;
                     }
@@ -97,12 +97,12 @@ namespace Big_Mammas_pizzaria
         }
 
 
-        public Menu menu
+        public bool Discount
         {
-            get { return _menu; }
+            get { return _discount; }
         }
 
-        public List<PizzaCreator> PizzaList
+        public List<Pizza> PizzaList
         {
             get { return _pizzaList; }
         }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Big_Mammas_pizzaria
 {
-    public class PizzaCreator
+    public class Pizza
     {   //pizza
         private string _name;
         private int _pizzaPrice;
@@ -19,7 +19,7 @@ namespace Big_Mammas_pizzaria
         private int _toppingPrice = 9;
 
         //Pizza Creator
-        public PizzaCreator(string name, string topping, int price)
+        public Pizza(string name, string topping, int price)
         {
             _name = name;
             _pizzaPrice = price;

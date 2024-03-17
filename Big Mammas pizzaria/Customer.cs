@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Big_Mammas_pizzaria
 {
-    public class Customer
+    public class Customer 
     {
         private string _name;
         private string _email;
@@ -15,30 +15,31 @@ namespace Big_Mammas_pizzaria
         private string _address;
         private bool _clubmember;
 
-        //Making an Order _order; so that i can make a method that creates an order.
-        Order _order;
-
-        public Customer(string name, string email, string phone, string adresse, bool customerClub)
+        private Order _order;
+        public Customer(string name, string email, string phone, string address, bool customerClub) 
         {
             _name = name;
             _email = email;
             _phone = phone;
-            _address = adresse;
+            _address = address;
             _clubmember = customerClub;
         }
+        // ved ikke helt hvordan jeg skal få updateret et objekt
+       
+
         //ToString Methode
         public override string ToString()
         {
-            string customerInfo = ($"Name:{_name} \nEmail: {_email} \nPhone : {_phone} \nAdress: {_address} \n{_order}");
+            string customerInfo = ($"Name: {_name} \nEmail: {_email} \nPhone: {_phone} \nAdress: {_address} \n{_order}");
             return customerInfo;
         }
-
+         
         //making my CreateOrder Method
         public void CreateOrder()
         {
-            _order = new Order(_clubmember);
+            Order _order = new Order(_clubmember) ;
         }
-
+        
         // Making properties
         public string Name
         {
@@ -56,13 +57,11 @@ namespace Big_Mammas_pizzaria
         {
             get { return _address; }
         }
-        public Order Order
-        {
-            get { return _order; }
-        }
+        
         public bool CustomerClub
         {
             get { return _clubmember; }
         }
+        public Order Order { get { return _order; } }
     }
 }
