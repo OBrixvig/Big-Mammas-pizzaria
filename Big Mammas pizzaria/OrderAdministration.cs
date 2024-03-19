@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Big_Mammas_pizzaria
 {
-    public class Order 
+    public class OrderAdministration 
     {
-        MenuCatalog catalog;
+        MenuAdministration catalog;
 
         private int _orderId = 0;
         private double _totalOrderPrice;
@@ -24,7 +24,7 @@ namespace Big_Mammas_pizzaria
         //Making my _pizzaList where i want to store all my pizzas
         private List<Pizza> _pizzaList = new List<Pizza>();
 
-        public Order(bool customerClub)
+        public OrderAdministration(bool customerClub)
         {
             _orderId += ++_idCounter;
             Date = DateTime.Now;
@@ -43,6 +43,15 @@ namespace Big_Mammas_pizzaria
         public void AddComment(string WhatYouWantTOSay)
         {
             _comment = WhatYouWantTOSay;
+        }
+        //Remove Pizza method
+        public void RemovePizzaFromList(Pizza pizza)
+        {
+            _pizzaList.Remove(pizza);
+        }
+        public void UpdatePizzaToppingFromList(Pizza pizza)
+        {
+
         }
 
         //ToString Method with a StringBuilder,so my ToString method is a little easier to read..

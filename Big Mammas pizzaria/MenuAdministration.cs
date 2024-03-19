@@ -9,9 +9,9 @@ using System.Xml.Linq;
 
 namespace Big_Mammas_pizzaria
 {
-    public class MenuCatalog
+    public class MenuAdministration
     {
-        public MenuCatalog()
+        public MenuAdministration()
         {
                 
         }
@@ -23,7 +23,14 @@ namespace Big_Mammas_pizzaria
         new Pizza("CAPRICCIOSA ", "TOMATO CHEESE HAM & MUSHROOMS ", 80),
         new Pizza("ITALIANO ", "TOMATO CHEESE MEATSOUCE & ONIONS", 80)
         };
-        
+
+        public void AddXtraTopping(Pizza pizza, string xtraTop)
+        {
+            pizza.XtraTopping = xtraTop;
+            pizza.PizzaPrice += pizza.ToppingPrice;
+        }
+
+
         public override string ToString()
         {
             StringBuilder sB = new StringBuilder();
@@ -32,7 +39,7 @@ namespace Big_Mammas_pizzaria
             //Making a foreach so i can get the pizzas in my Menulist. just as they are in the ToString in my PizzaCreator Class.
             foreach (Pizza Menu in MenuList)
             {
-                sB.AppendLine(Menu.ToString());
+                sB.AppendLine(Menu.ToString()); 
             }
             sB.AppendLine("Delevery is 40,-" + "\n" + "You can make your own pizza just ask.");
             //returner all the strings i have put in my sB

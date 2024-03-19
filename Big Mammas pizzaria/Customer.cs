@@ -15,7 +15,7 @@ namespace Big_Mammas_pizzaria
         private string _address;
         private bool _clubmember;
 
-        private Order _order;
+        private OrderAdministration _order;
         public Customer(string name, string email, string phone, string address, bool customerClub) 
         {
             _name = name;
@@ -37,7 +37,7 @@ namespace Big_Mammas_pizzaria
         //making my CreateOrder Method
         public void CreateOrder()
         {
-            _order = new Order(_clubmember) ;
+            _order = new OrderAdministration(_clubmember) ;
         }
         
         // Making properties
@@ -63,6 +63,6 @@ namespace Big_Mammas_pizzaria
         {
             get { return _clubmember; }
         }
-        public Order Order { get { return _order; } }
+        public OrderAdministration Order { get { return _order; } }
     }
 }

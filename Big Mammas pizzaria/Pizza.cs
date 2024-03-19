@@ -28,11 +28,7 @@ namespace Big_Mammas_pizzaria
         }
 
         // add topping virker ikke
-        public void AddTopping(string top)
-        {
-            _xtraTopping = top;
-            _pizzaPrice += _toppingPrice;
-        }
+     
 
         // ToString Method
         public override string ToString()
@@ -45,22 +41,27 @@ namespace Big_Mammas_pizzaria
         public string Name
         {
             get { return _name; }
+            set { _name = value; }
         }
         public int PizzaPrice
         {
             get { return _pizzaPrice; }
+            set { _pizzaPrice = value; }
         }
         public string PizzaTopping
         {
             get { return _pizzaTopping; }
+            set { _pizzaTopping = value;}
         }
         public string XtraTopping
         {
             get { return _xtraTopping; }
+            set { _xtraTopping = value; }
         }
         public int ToppingPrice
         {
             get { return _toppingPrice; }
+            set { _toppingPrice = value; }
         }
 
     }

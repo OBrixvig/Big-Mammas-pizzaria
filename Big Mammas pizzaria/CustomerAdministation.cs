@@ -20,10 +20,9 @@ namespace Big_Mammas_pizzaria
         {
 
         }
-        // not working.
+        
         public void UpdateCustomerName(Customer customer, string name)
         {
-            
             customer.Name = name ;
         }
         public void AddCustomerToList(Customer customer)
