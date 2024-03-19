@@ -30,7 +30,7 @@ namespace Big_Mammas_pizzaria
         //ToString Methode
         public override string ToString()
         {
-            string customerInfo = ($"Name: {_name} \nEmail: {_email} \nPhone: {_phone} \nAdress: {_address} \n{_order}");
+            string customerInfo = ($"Navn: {_name} \nEmail: {_email} \nMobil: {_phone} \nAdresse: {_address} \n{_order}");
             return customerInfo;
         }
          

@@ -33,41 +33,60 @@ namespace Big_Mammas_pizzaria
             _discount = customerClub;
         }
 
+        //UpdatePizza method
+        public void AddXtraTopping(Pizza pizza, string pizzaXtraTopping)
+        {
+            pizza.XtraTopping = pizzaXtraTopping;
+            pizza.PizzaPrice += pizza.ToppingPrice;
+        }
 
         //Add pizza method
         public void AddPizzaToList(Pizza pizza)
         {
             _pizzaList.Add(pizza);
         }
-        //AddComment Method
+
+        //AddComment method
         public void AddComment(string WhatYouWantTOSay)
         {
             _comment = WhatYouWantTOSay;
         }
+
         //Remove Pizza method
         public void RemovePizzaFromList(Pizza pizza)
         {
             _pizzaList.Remove(pizza);
         }
-        public void UpdatePizzaToppingFromList(Pizza pizza)
-        {
 
+        //Recive all items in pizzalist
+        public void ReciveAllItemsPizzaList()
+        {
+            foreach (Pizza pizzas in PizzaList)
+            {
+                Console.WriteLine(pizzas);
+            }
+        }
+        //Recive one specefik item in MenuList
+        public void RecivePizzaFromPizzaList(Pizza pizza)
+        {
+            PizzaList.Contains(pizza);
+            Console.WriteLine(pizza);
         }
 
         //ToString Method with a StringBuilder,so my ToString method is a little easier to read..
         public override string ToString()
         {
             StringBuilder sB = new StringBuilder();
-            sB.AppendLine("\n" + "Your order: ");
+            sB.AppendLine("\n" + "Din ordre: ");
 
             //Making a foreach so i can spit out the pizzas in my list. just as they are in the ToString in my PizzaCreator Class.
-            foreach (Pizza pizza in PizzaList)
+            foreach (Pizza pizza in _pizzaList)
             {
                 sB.AppendLine(pizza.ToString());
             }
-            sB.AppendLine("Comments: " + _comment + "\n" + "\n" + "Delivery: " + _delivery + "kr.");
-            sB.AppendLine("Total Price: " + String.Format("{0:0.00}", TotalPrice) + "kr. incl. taxes." + "\n" + "ordre-id " + _orderId + "\n");
-            sB.AppendLine("date " + Date.ToString("dd-MM-yyyy :  " + "\n" + "kl: HH:mm " + "\n"));
+            sB.AppendLine("Kommentar: " + _comment + "\n" + "\n" + "Levering: " + _delivery + "kr.");
+            sB.AppendLine("Total Pris: " + String.Format("{0:0.00}", TotalPrice) + "kr. incl. moms." + "\n" + "ordre id " + _orderId + "\n");
+            sB.AppendLine("Dato " + Date.ToString("dd-MM-yyyy " + "\n" + "kl: HH:mm " + "\n"));
             //returner all the strings i have put in my sB
             return sB.ToString();
         }
@@ -83,8 +102,8 @@ namespace Big_Mammas_pizzaria
             get { return _date; }
             set { _date = value; }
         }
-        // in this property i have put _discount boolean in so if true you get totalprice with 20% discount
-        // and a boolean so that my order prices dont get ++ every time i call this property
+        // in this property i have put a _discount boolean in, so if true you get totalprice with 20% discount
+        // and a boolean _ifChekedOut so that my order prices dont get ++ every time i call this property
         public double TotalPrice
         {
             get
@@ -104,13 +123,10 @@ namespace Big_Mammas_pizzaria
         {
             get { return _comment; }
         }
-
-
         public bool Discount
         {
             get { return _discount; }
         }
-
         public List<Pizza> PizzaList
         {
             get { return _pizzaList; }
