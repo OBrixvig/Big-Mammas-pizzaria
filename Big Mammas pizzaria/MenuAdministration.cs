@@ -26,6 +26,7 @@ namespace Big_Mammas_pizzaria
              new Pizza("ITALIANO ", "Tomat ost kødsovs & løg", 80)
         };
 
+        //Create a new pizza and adds to list
         public void CreateNewPizzaToMenuList(string name, string topping, int price)
         {
             Pizza newPizza = new Pizza(name, topping, price);                   
@@ -39,8 +40,6 @@ namespace Big_Mammas_pizzaria
                 Console.WriteLine(newPizza.Name + " er tilføjet til menuen");               
             }
         }
-
-
 
         //Remove Pizza method
         public void RemovePizzaFromMenuList(Pizza pizza)

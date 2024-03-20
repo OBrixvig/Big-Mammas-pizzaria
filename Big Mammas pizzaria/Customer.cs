@@ -24,7 +24,6 @@ namespace Big_Mammas_pizzaria
             _address = address;
             _clubmember = customerClub;
         }
-        // ved ikke helt hvordan jeg skal få updateret et objekt
        
 
         //ToString Methode
@@ -61,8 +60,7 @@ namespace Big_Mammas_pizzaria
         public string Address
         {
             get { return _address; }
-        }
-        
+        }       
         public bool CustomerClub
         {
             get { return _clubmember; }
