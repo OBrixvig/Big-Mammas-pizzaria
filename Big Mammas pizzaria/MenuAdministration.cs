@@ -28,19 +28,19 @@ namespace Big_Mammas_pizzaria
 
         public void CreateNewPizzaToMenuList(string name, string topping, int price)
         {
-            Pizza newPizza = new Pizza(name, topping, price);
-
-            if (!MenuList.Equals(newPizza))
+            Pizza newPizza = new Pizza(name, topping, price);                   
             {
+                if (MenuList.Exists(pizzaName => pizzaName.Name == newPizza.Name))
+                {                    
+                    Console.WriteLine(newPizza.Name + " er allerde i menuen og kan derfor ikke tilføjes");
+                    return;
+                }
                 MenuList.Add(newPizza);
-                Console.WriteLine(newPizza.Name + " er tilføjet til menuen");
-            }
-           else if (MenuList.Equals(newPizza))
-            {
-                MenuList.Remove(newPizza);
-                Console.WriteLine("Pizzaen er allerede tilføjet");
+                Console.WriteLine(newPizza.Name + " er tilføjet til menuen");               
             }
         }
+
+
 
         //Remove Pizza method
         public void RemovePizzaFromMenuList(Pizza pizza)
