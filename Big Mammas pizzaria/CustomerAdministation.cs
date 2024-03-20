@@ -26,6 +26,7 @@ namespace Big_Mammas_pizzaria
         {
             customer.Name = name ;
         }
+
         //Sorts customers to the two list.
         public void AddCustomerToList(Customer customer)
         {
@@ -36,6 +37,7 @@ namespace Big_Mammas_pizzaria
                 _clubMembersList.Add(customer);
             }        
         }
+
         //Removes customers from the list
         public void DeleteCustomerToList(Customer customer)
         {
@@ -59,6 +61,7 @@ namespace Big_Mammas_pizzaria
             {
                 Console.WriteLine(customerClub);         
             }
+
         //Looks for a customer and sends a error if not found
         }
         public void ReciveCustomerFromList(string customerName)

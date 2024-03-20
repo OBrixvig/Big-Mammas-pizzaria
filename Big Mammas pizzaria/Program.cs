@@ -31,11 +31,14 @@ namespace Big_Mammas_pizzaria
             customer1.Order.AddPizzaToList(menu.MenuList[2]);
             customer1.Order.ReciveAllItemsPizzaList();
             Console.ReadKey(false);
+            Console.WriteLine();
 
             // Customer removes item
             customer1.Order.RemovePizzaFromList(customer1.Order.PizzaList[3]);
             customer1.Order.ReciveAllItemsPizzaList();
             Console.ReadKey(false);
+            Console.Clear();
+
             // Customer Add xtra toppings to pizza                                               Virker ikke :/
             customer1.Order.AddXtraTopping(customer1.Order.PizzaList[0],"Ekstra Pepper");
             customer1.Order.AddXtraTopping(customer1.Order.PizzaList[1], "Ekstra Ost");
@@ -51,12 +54,14 @@ namespace Big_Mammas_pizzaria
             Customer customer2 = new Customer("Poul Magnussen", "Musik123@hotmail.com", "12123344", "Nodegade 31. 7. tv.", true);
             BigMammaAdmin.AddCustomerToList(customer2);
 
-            BigMammaAdmin.CreatePizzaToMenuList("lågsus", "Kebab, dressing, ost & tomat", 120);
+            BigMammaAdmin.CreateNewPizzaToMenuList("lågsus", "Kebab, dressing, ost & tomat", 120);
             //customer2 order begins
             customer2.CreateOrder();
-            customer2.Order.AddPizzaToList(menu.MenuList[3]);
+            customer2.Order.AddPizzaToList(menu.MenuList[0]);
             customer2.Order.AddPizzaToList(menu.MenuList[1]);
-            customer2.Order.AddPizzaToList(menu.MenuList[4]);
+            customer2.Order.AddPizzaToList(menu.MenuList[2]);
+            customer2.Order.AddPizzaToList(menu.MenuList[3]);
+            customer2.Order.AddPizzaToList(BigMammaAdmin.MenuList[4]);
             customer2.Order.AddXtraTopping(customer2.Order.PizzaList[0], "Ekstra smør");
             customer2.Order.AddComment("Jeg har desværre ingen elevator, trappe eller dør, så du er nød til at kravle op på min altan");
 
@@ -84,6 +89,7 @@ namespace Big_Mammas_pizzaria
             Console.ReadKey(false);
 
             Console.Clear();
+
             BigMammaAdmin.ReciveAllCustomerFromList();
 
             BigMammaAdmin.ReciveCustomerFromList("Jansen Heincik");
@@ -91,7 +97,12 @@ namespace Big_Mammas_pizzaria
             BigMammaAdmin.UpdateCustomerName(customer1, "Jansen Heincik");
 
             BigMammaAdmin.AddCustomerToList(new Customer("Mr. Jeg Kigger bare", "ErUdePåEnGåTur@gmail.com", "12345678", "Hamudepådenbådder 26.", false));
+
             BigMammaAdmin.ReciveCustomerFromList("Jansen Heincik");
+
+            Console.WriteLine();
+
+            BigMammaAdmin.ReciveAllCustomerFromList();
 
             Console.WriteLine();
             Console.ReadKey(false);

@@ -15,7 +15,7 @@ namespace Big_Mammas_pizzaria
         public MenuAdministration()
         {
         }
-        private Pizza _pizza;
+        //private Pizza _pizza;
         public List<Pizza> MenuList = new List<Pizza>()
         {
         //Pizzas in Menu
@@ -24,13 +24,13 @@ namespace Big_Mammas_pizzaria
              new Pizza("CAPRICCIOSA ", "Tomat ost skinke & champignon ", 80),
              new Pizza("ITALIANO ", "Tomat ost kødsovs & løg", 80)
         };
-        //Create new pizza to MenuList
-        public void CreatePizzaToMenuList(string name, string topping, int price)
+        
+        public void CreateNewPizzaToMenuList(string name, string topping, int price)
         {
-            // _pizza = new Pizza(name, topping, price);
-            //MenuList.Add(_pizza);
+            Console.WriteLine(MenuList.Count);
             Pizza pizza = new Pizza(name, topping, price);
             MenuList.Add(pizza);
+            Console.WriteLine(MenuList.Count);
         }
         //Add Pizza To MenuList
         public void AddPizzaToMenuList(Pizza pizza)
@@ -79,5 +79,6 @@ namespace Big_Mammas_pizzaria
             //Returning all the strings i have put in my sB
             return sB.ToString();
         }
+        
     }
 }
