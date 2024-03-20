@@ -14,7 +14,7 @@ namespace Big_Mammas_pizzaria
         private string _phone;
         private string _address;
         private bool _clubmember;
-
+        
         private OrderAdministration _order;
         public Customer(string name, string email, string phone, string address, bool customerClub) 
         {
@@ -39,7 +39,11 @@ namespace Big_Mammas_pizzaria
         {
             _order = new OrderAdministration(_clubmember) ;
         }
-        
+        public void DeleteOrder()
+        {
+            _order.PizzaList.Clear();
+        }
+
         // Making properties
         public string Name
         {

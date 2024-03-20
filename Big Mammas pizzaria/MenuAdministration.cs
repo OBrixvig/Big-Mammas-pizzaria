@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using System.Xml.Linq;
 using System.Runtime.InteropServices;
+using System.ComponentModel.Design;
 
 namespace Big_Mammas_pizzaria
 {
@@ -24,18 +25,21 @@ namespace Big_Mammas_pizzaria
              new Pizza("CAPRICCIOSA ", "Tomat ost skinke & champignon ", 80),
              new Pizza("ITALIANO ", "Tomat ost kødsovs & løg", 80)
         };
-        
+
         public void CreateNewPizzaToMenuList(string name, string topping, int price)
         {
-            Console.WriteLine(MenuList.Count);
-            Pizza pizza = new Pizza(name, topping, price);
-            MenuList.Add(pizza);
-            Console.WriteLine(MenuList.Count);
-        }
-        //Add Pizza To MenuList
-        public void AddPizzaToMenuList(Pizza pizza)
-        {
-            MenuList.Add(pizza);
+            Pizza newPizza = new Pizza(name, topping, price);
+
+            if (!MenuList.Equals(newPizza))
+            {
+                MenuList.Add(newPizza);
+                Console.WriteLine(newPizza.Name + " er tilføjet til menuen");
+            }
+           else if (MenuList.Equals(newPizza))
+            {
+                MenuList.Remove(newPizza);
+                Console.WriteLine("Pizzaen er allerede tilføjet");
+            }
         }
 
         //Remove Pizza method
@@ -79,6 +83,5 @@ namespace Big_Mammas_pizzaria
             //Returning all the strings i have put in my sB
             return sB.ToString();
         }
-        
     }
 }

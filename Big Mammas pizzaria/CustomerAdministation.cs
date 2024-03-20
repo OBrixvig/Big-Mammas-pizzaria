@@ -11,9 +11,9 @@ using static System.Reflection.Metadata.BlobBuilder;
 
 namespace Big_Mammas_pizzaria
 {
-    public class CustomerAdministation : MenuAdministration
+    public class CustomerAdministation 
     {
-
+        private MenuAdministration _menu = new MenuAdministration();
         private List<Customer> _customerList = new List<Customer>();
         private List<Customer> _clubMembersList = new List<Customer>();
 
@@ -24,7 +24,7 @@ namespace Big_Mammas_pizzaria
         //Updates Customer Name
         public void UpdateCustomerName(Customer customer, string name)
         {
-            customer.Name = name ;
+            customer.Name = name;
         }
 
         //Sorts customers to the two list.
@@ -35,7 +35,7 @@ namespace Big_Mammas_pizzaria
             if (customer.CustomerClub == true)
             {
                 _clubMembersList.Add(customer);
-            }        
+            }
         }
 
         //Removes customers from the list
@@ -46,7 +46,7 @@ namespace Big_Mammas_pizzaria
             if (customer.CustomerClub == true)
             {
                 _clubMembersList.Remove(customer);
-            }            
+            }
         }
 
         // Recives all the customers in the two list
@@ -56,34 +56,38 @@ namespace Big_Mammas_pizzaria
             {
                 Console.WriteLine(customer);
             }
-            Console.WriteLine("\n"+"PizzaKlubbens medlemmer er"+"\n");
+            Console.WriteLine("\n" + "PizzaKlubbens medlemmer er" + "\n");
             foreach (Customer customerClub in _clubMembersList)
             {
-                Console.WriteLine(customerClub);         
+                Console.WriteLine(customerClub);
             }
 
-        //Looks for a customer and sends a error if not found
+            //Looks for a customer and sends a error if not found
         }
         public void ReciveCustomerFromList(string customerName)
         {
             Customer nameSearch = _customerList.Find(customer => customer.Name == customerName);
             Console.WriteLine(nameSearch);
-            if (nameSearch != null)
+            if (nameSearch == null)
             {
-                Console.WriteLine("Den person kender vi desværre ikke");
-            }           
+                Console.WriteLine(customerName + " navnet kan ikke genkendes i vores system");
+            }
         }
         //tostring method
         public override string ToString()
         {
-            return base.ToString(); 
+            return base.ToString();
         }
         // properties
         public List<Customer> CustomersList
         { get { return _customerList; } }
         public List<Customer> ClubMembers
         { get { return _clubMembersList; } }
+        public MenuAdministration Menu
+        {
+            get { return _menu; }
+        }
 
-       
+
     }
 }
