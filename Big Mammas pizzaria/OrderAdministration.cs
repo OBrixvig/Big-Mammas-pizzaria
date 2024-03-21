@@ -13,12 +13,12 @@ namespace Big_Mammas_pizzaria
         private int _orderId = 0;
         private double _totalOrderPrice;
         private DateTime _date;
-        static int _idCounter;
+        private static int _idCounter;
         private double _delivery = 40;
         private bool _ifChekedOut = false;
         private string _comment;
 
-        // _discount is used in the constructor and the code for it to work is in get set property. line 72
+        // _discount is used in the constructor and the code for it to work is in get set property. line 102
         private bool _discount = false;
 
         //Making my _pizzaList where i want to store all my pizzas

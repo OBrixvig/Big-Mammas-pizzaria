@@ -14,6 +14,8 @@ namespace Big_Mammas_pizzaria
     public class CustomerAdministation 
     {
         private MenuAdministration _menu = new MenuAdministration();
+
+        //Lister
         private List<Customer> _customerList = new List<Customer>();
         private List<Customer> _clubMembersList = new List<Customer>();
 
